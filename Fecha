@@ -1,0 +1,32 @@
+# include <stdio.h>
+# include <stdbool.h>
+
+#define MIN_MES 1
+#define MAX_MES 12
+#define ANIO_MIN 1000
+#define ANIO_MAX 9999
+#define ANIO_ACTUAL 2025
+#define MES_ACTUAL 9
+#define EDAD_MAXIMA 18
+
+//Pre: -
+//Post:Devuelve true si el año está entre 1000 y 9999
+bool es_anio_valido(int anio_nacimiento){
+    return anio_nacimiento >= ANIO_MIN && anio_nacimiento <= ANIO_MAX;
+}
+
+//Pre: -
+//Post: Devuelve true si el mes está entre 1 y 12
+bool es_mes_valido(int mes_nacimiento){
+    return mes_nacimiento >= MIN_MES && mes_nacimiento <= MAX_MES;
+}
+
+//Pre:-
+//Post: Calcula y devuelve la edad según la fecha actual (2025.09)
+int calcular_edad(int anio, int mes){
+    int edad = ANIO_ACTUAL - anio;
+    if(mes > MES_ACTUAL){
+        edad -= 1;
+    }
+    return edad;
+}
